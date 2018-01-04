@@ -140,6 +140,12 @@
     <None Include="walter.rpc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+	<None Include="walter_mcts.edm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="walter_mcts.rpc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

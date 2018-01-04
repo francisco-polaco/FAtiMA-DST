@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
+using Newtonsoft.Json.Linq;
 
 namespace FAtiMA_Server
 {
@@ -19,6 +20,8 @@ namespace FAtiMA_Server
 
         static void Main(string[] args)
         {
+
+#if switch
             AssetManager.Instance.Bridge = new BasicIOBridge();
 
             Console.Write("Loading Character from file... ");
@@ -33,6 +36,24 @@ namespace FAtiMA_Server
             ws.Stop();
 
             Walter.SaveToFile("./walter-final.rpc");
+#else
+            //----------------------------------------------------------------//
+
+            AssetManager.Instance.Bridge = new BasicIOBridge();
+
+            Console.Write("Loading Character from file... ");
+            Walter = RolePlayCharacterAsset.LoadFromFile("./walter_mcts.rpc");
+            Walter.LoadAssociatedAssets();
+            Console.WriteLine("Complete!");
+
+            var ws = new WebServer(SendResponse, "http://localhost:8080/");
+            ws.Run();
+            Console.WriteLine("Press a key to quit.");
+            Console.ReadKey();
+            ws.Stop();
+
+            Walter.SaveToFile("./walter-final-mcts.rpc");
+#endif       
         }
 
         public static string SendResponse(HttpListenerRequest request)
@@ -53,6 +74,16 @@ namespace FAtiMA_Server
                                     try
                                     {
                                         p.UpdatePerceptions(Walter);
+#if DEBUG
+                                        Console.WriteLine("New percetion");
+                                        var array = JObject.Parse(e)["Vision"].ToString();
+                                        dynamic dynJson = JsonConvert.DeserializeObject(array);
+                                        foreach (var print in dynJson)
+                                        {
+                                            Console.WriteLine(print);
+                                            Console.WriteLine(JObject.Parse(print)["Prefab"] + " " + JObject.Parse(print)["GUID"]);
+                                        }
+#endif
                                     }
                                     catch (Exception excpt)
                                     {
@@ -65,16 +96,35 @@ namespace FAtiMA_Server
                         }
                         return JsonConvert.False;
                     case "/decide":
+
+
+
                         var decision = Walter.Decide();
+
+                        //var action = decision.FirstOrDefault();
+                        foreach (var a in decision) {
+                            Console.WriteLine("MODA TUTORIAL: Action: " + a.Name.ToString() + " Target " + a.Target + " Utility: " + a.Utility);
+                        }
+
                         if (decision.Count() < 1)
+                        {
+#if DEBUG
+                            Console.WriteLine("No decision");
+#endif
                             return JsonConvert.Null;
+                        }
+
+                        Console.WriteLine("Before conversion");
                         var action = Action.ToAction(decision.First());
-                        string t = decision.Count().ToString() + ": ";
+                        Console.WriteLine("after conversion");
+                        //string t = decision.Count().ToString() + ": ";
                         foreach (var a in decision)
                         {
-                            t += a.Name + " " + a.Target + "; ";
+                            Console.WriteLine(a.Name + " " + a.Target + "; ");
+
+                            //t += a.Name + " " + a.Target + "; ";
                         }
-                        Debug.WriteLine(t);
+                        //Console.WriteLine(t);
                         return JsonConvert.SerializeObject(action);
                     case "/events":
                         //Console.Write("An event occured... ");

@@ -25,7 +25,6 @@ namespace FAtiMA_Server
         {
             Char[] delimiters = { '(', ',', ' ', ')' };
             String[] splitted = a.Name.ToString().Split(delimiters);
-            
             return new Action(splitted[1], splitted[3], splitted[5], splitted[7], splitted[9], splitted[11]);
         }
         public override string ToString()
