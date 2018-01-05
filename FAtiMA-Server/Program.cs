@@ -74,7 +74,7 @@ namespace FAtiMA_Server
                                     try
                                     {
                                         p.UpdatePerceptions(Walter);
-#if DEBUG
+#if !DEBUG
                                         Console.WriteLine("New percetion");
                                         var array = JObject.Parse(e)["Vision"].ToString();
                                         dynamic dynJson = JsonConvert.DeserializeObject(array);
@@ -102,9 +102,9 @@ namespace FAtiMA_Server
                         var decision = Walter.Decide();
 
                         //var action = decision.FirstOrDefault();
-                        foreach (var a in decision) {
-                            Console.WriteLine("MODA TUTORIAL: Action: " + a.Name.ToString() + " Target " + a.Target + " Utility: " + a.Utility);
-                        }
+                        //foreach (var a in decision) {
+                        //    Console.WriteLine("MODA TUTORIAL: Action: " + a.Name.ToString() + " Target " + a.Target + " Utility: " + a.Utility);
+                        //}
 
                         if (decision.Count() < 1)
                         {
@@ -114,17 +114,17 @@ namespace FAtiMA_Server
                             return JsonConvert.Null;
                         }
 
-                        Console.WriteLine("Before conversion");
+                        //Console.WriteLine("Before conversion: " + decision.FirstOrDefault().ToString());
                         var action = Action.ToAction(decision.First());
-                        Console.WriteLine("after conversion");
-                        //string t = decision.Count().ToString() + ": ";
+                        //Console.WriteLine("ACTION conversion: " + action.Name + " " + action.Target + "; ");
+                        string t = decision.Count().ToString() + ": ";
                         foreach (var a in decision)
                         {
-                            Console.WriteLine(a.Name + " " + a.Target + "; ");
+                            //Console.WriteLine(a.Name + " " + a.Target + "; ");
 
-                            //t += a.Name + " " + a.Target + "; ";
+                            t += a.Name + " " + a.Target + "; ";
                         }
-                        //Console.WriteLine(t);
+                        Console.WriteLine(t);
                         return JsonConvert.SerializeObject(action);
                     case "/events":
                         Console.Write("An event occured... ");

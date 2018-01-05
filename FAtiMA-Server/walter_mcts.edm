@@ -8,7 +8,7 @@
 							"Action": "[a]",
 							"Target": "[t]",
 							"Conditions": {
-								"Set": [ "MCTS([a],[t]) = True" ]
+								"Set": [ "IsBusy(SELF) = False","MCTS([a],[t]) = True" ]
 							},
 							"Priority": "1"
 						}]
