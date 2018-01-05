@@ -62,49 +62,49 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ActionLibrary">
-      <HintPath>..\packages\FAtiMA\ActionLibrary.dll</HintPath>
+      <HintPath>..\..\dll-fatima\ActionLibrary.dll</HintPath>
     </Reference>
     <Reference Include="AutobiographicMemory">
-      <HintPath>..\packages\FAtiMA\AutobiographicMemory.dll</HintPath>
+      <HintPath>..\..\dll-fatima\AutobiographicMemory.dll</HintPath>
     </Reference>
     <Reference Include="CommeillFaut">
-      <HintPath>..\packages\FAtiMA\CommeillFaut.dll</HintPath>
+      <HintPath>..\..\dll-fatima\CommeillFaut.dll</HintPath>
     </Reference>
     <Reference Include="Conditions">
-      <HintPath>..\packages\FAtiMA\Conditions.dll</HintPath>
+      <HintPath>..\..\dll-fatima\Conditions.dll</HintPath>
     </Reference>
     <Reference Include="EmotionalAppraisal">
-      <HintPath>..\packages\FAtiMA\EmotionalAppraisal.dll</HintPath>
+      <HintPath>..\..\dll-fatima\EmotionalAppraisal.dll</HintPath>
     </Reference>
     <Reference Include="EmotionalDecisionMaking">
-      <HintPath>..\packages\FAtiMA\EmotionalDecisionMaking.dll</HintPath>
+      <HintPath>..\..\dll-fatima\EmotionalDecisionMaking.dll</HintPath>
     </Reference>
     <Reference Include="GAIPS.Rage">
-      <HintPath>..\packages\FAtiMA\GAIPS.Rage.dll</HintPath>
+      <HintPath>..\..\dll-fatima\GAIPS.Rage.dll</HintPath>
     </Reference>
     <Reference Include="GAIPS.Serialization">
-      <HintPath>..\packages\FAtiMA\GAIPS.Serialization.dll</HintPath>
+      <HintPath>..\..\dll-fatima\GAIPS.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="IntegratedAuthoringTool">
       <HintPath>..\packages\FAtiMA\IntegratedAuthoringTool.dll</HintPath>
     </Reference>
     <Reference Include="KnowledgeBase">
-      <HintPath>..\packages\FAtiMA\KnowledgeBase.dll</HintPath>
+      <HintPath>..\..\dll-fatima\KnowledgeBase.dll</HintPath>
     </Reference>
     <Reference Include="MCTS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\FATIMA\MCTS.dll</HintPath>
+      <HintPath>..\..\dll-fatima\MCTS.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RageAssetManager">
-      <HintPath>..\packages\FAtiMA\RageAssetManager.dll</HintPath>
+      <HintPath>..\..\dll-fatima\RageAssetManager.dll</HintPath>
     </Reference>
     <Reference Include="RolePlayCharacter">
-      <HintPath>..\packages\FAtiMA\RolePlayCharacter.dll</HintPath>
+      <HintPath>..\..\dll-fatima\RolePlayCharacter.dll</HintPath>
     </Reference>
     <Reference Include="SocialImportanceAsset">
-      <HintPath>..\packages\FAtiMA\SocialImportanceAsset.dll</HintPath>
+      <HintPath>..\..\dll-fatima\SocialImportanceAsset.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -115,10 +115,10 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="Utilities">
-      <HintPath>..\packages\FAtiMA\Utilities.dll</HintPath>
+      <HintPath>..\..\dll-fatima\Utilities.dll</HintPath>
     </Reference>
     <Reference Include="WellFormedNames">
-      <HintPath>..\packages\FAtiMA\WellFormedNames.dll</HintPath>
+      <HintPath>..\..\dll-fatima\WellFormedNames.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

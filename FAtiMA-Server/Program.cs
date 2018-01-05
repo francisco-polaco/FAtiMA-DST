@@ -22,7 +22,7 @@ namespace FAtiMA_Server
             AssetManager.Instance.Bridge = new BasicIOBridge();
 
             Console.Write("Loading Character from file... ");
-            Walter = RolePlayCharacterAsset.LoadFromFile("./walter.rpc");
+            Walter = RolePlayCharacterAsset.LoadFromFile("./RPC-MCTS.rpc");
             Walter.LoadAssociatedAssets();
             Console.WriteLine("Complete!");
 
@@ -32,7 +32,7 @@ namespace FAtiMA_Server
             Console.ReadKey();
             ws.Stop();
 
-            Walter.SaveToFile("./walter-final.rpc");
+            Walter.SaveToFile("./RPC-MCTS-final.rpc");
         }
 
         public static string SendResponse(HttpListenerRequest request)
