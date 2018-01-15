@@ -83,9 +83,11 @@ namespace FAtiMA_Server
                                             Console.WriteLine(print);
                                             Console.WriteLine(JObject.Parse(print)["Prefab"] + " " + JObject.Parse(print)["GUID"]);
                                         }
+                                        //Console.WriteLine("End-----------------------------");
+                                        //Console.ReadLine();
 #endif
                                     }
-                                    catch (Exception excpt)
+                                    catch (Exception )
                                     {
                                         //Debug.WriteLine(p.ToString());
                                         throw new Exception(p.ToString());
