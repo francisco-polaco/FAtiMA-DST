@@ -91,8 +91,9 @@
     <Reference Include="KnowledgeBase">
       <HintPath>..\FAtiMA-toolkit\KnowledgeBase.dll</HintPath>
     </Reference>
-    <Reference Include="MCTS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="MCTS, Version=1.0.6599.29265, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\FAtiMA-toolkit\MCTS.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -140,7 +141,7 @@
     <None Include="walter.rpc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Include="walter_mcts.edm">
+    <None Include="walter_mcts.edm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="walter_mcts.rpc">
